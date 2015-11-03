@@ -12,6 +12,14 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+def schema(table1, table2):
+    if (len(table1[0]) == len(table2[0])):
+        for i in range(0, len(table1)):
+            if(table1[0][i] != table2[0][i]):
+                return False
+        return True
+    else:
+        return False
 
 def union(table1, table2):
     """
