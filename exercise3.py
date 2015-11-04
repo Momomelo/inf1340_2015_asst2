@@ -144,5 +144,3 @@ print(tablewhy)
 
 tableintersect = intersection(grad, gradcheck)
 print(tableintersect)
-
-print(tabledifference)
