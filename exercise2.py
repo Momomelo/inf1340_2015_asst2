@@ -21,6 +21,11 @@ def find(input_string, substring, start, end):
     :raises:
 
     """
+    sub_length = len(substring)
+    for i in range (start, end):
+        check = input_string[i: i+sub_length]
+        if (check == substring):
+            return i
     return -1
 
 
@@ -36,4 +41,5 @@ def multi_find(input_string, substring, start, end):
     result = ""
 
     return result
+
 
