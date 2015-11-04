@@ -11,16 +11,44 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+vowel = ["a","e","i","o","u"]
+consonant = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
 
-def pig_latinify(word):
-    """
-    Describe your function
+#took out "word" from pig_latinify(word) below
+def pig_latinify():
+	piglatinchecker = str(raw_input("Input a string to make it piglatin!"))
 
-    :param :
-    :return:
-    :raises:
+	if piglatinchecker[0] in vowel:
+		print piglatinchecker + "yay"
+	elif piglatinchecker[0] in consonant:
+		remove consonant in piglatinchecker
+		
+		print "its a consonant!"
+	else:
+		print ("Error")
 
-    """
+pig_latinify()
+
+print vowel
+print consonant
+#Remove pig_latinify() after you are done the codeself.
+
+
+
+"""
+if piglatin:
+
     result = ""
 
     return result
+"""
+#^ This above was part of the original code
+
+
+# Kei'ichi's notes below
+"""
+	What to do:
+
+		if begins with list vowel, append "yay" to the end
+		if word begins with list consonent, remove all consonants until the first vowel then append them to the end of the word. Then add "ay" to the end.
+"""
