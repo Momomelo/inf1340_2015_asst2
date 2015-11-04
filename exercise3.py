@@ -54,12 +54,17 @@ def intersection(table1, table2):
         # clean the tables to ensure all uniqueness
         table1 = remove_duplicates(table1)
         table2 = remove_duplicates(table2)
-
+        # going through row by row of table 1
         for i in range(0, len(table1)):
+            # going through row by row of table 2
             for j in range(0, len(table2)):
+                # checking if first item in row is same in both
                 if(table1[i][0] == table2[j][0]):
+                    # if so start a counter of similarities
                     similar_count = 1
+                    # check every item in that row if same as other
                     for k in range(1, len(table1[0])):
+
                         if(table1[i][k] == table2[j][k]):
                             similar_count=similar_count+1
                         else:
@@ -78,7 +83,28 @@ def difference(table1, table2):
     Describe your function
 
     """
-    return []
+    table_difference = table1[:]
+    table_intersection = intersection(table1, table2)
+    if is_equal(table1, table2):
+        table1 = remove_duplicates(table1)
+        for i in range(0, len(table_intersection)):
+            for j in range(1, len(table_difference)):
+                # checking if first item in row is same in both
+                if(table_intersection[i][0] == table_difference[j][0]):
+                    # if so start a counter of similarities
+                    similar_count = 1
+                    # check every item in that row if same as other
+                    for k in range(1, len(table1[0])):
+                        if(table_intersection[i][k] == table_difference[j][k]):
+                            similar_count=similar_count+1
+                        else:
+                            break
+                    if (similar_count == len(table_difference[0])):
+                        del table_difference[j]
+                        break
+    else:
+        raise MismatchedAttributesException('Schema of tables do not match')
+    return table_difference
 
 
 #####################
@@ -118,3 +144,5 @@ print(tablewhy)
 
 tableintersect = intersection(grad, gradcheck)
 print(tableintersect)
+
+print(tabledifference)
