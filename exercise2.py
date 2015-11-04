@@ -39,7 +39,14 @@ def multi_find(input_string, substring, start, end):
 
     """
     result = ""
+    for i in range (start, end):
+        index_found = find(input_string, substring, start, end)
+        if (index_found == -1):
+            break
+        else:
+            result = result + str(index_found) + ","
+            start = index_found + len(substring)
+    return result[0:len(result)-1]
 
-    return result
-
-
+print(multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20))
+print(find("Ni! Ni! Ni! Ni!", "Ni", 4, 20))
