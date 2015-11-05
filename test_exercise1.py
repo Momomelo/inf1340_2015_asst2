@@ -6,14 +6,13 @@ Test module for exercise1.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = "Kei'ichiro Yamamoto, Tzu Tai"
+__email__ = "keiichiro.yamamoto@mail.utoronto.ca , "
+__copyright__ = "2015 Kei'ichiro Yamamoto"
 __license__ = "MIT License"
 
 
 from exercise1 import pig_latinify
-
 
 def test_basic():
     """
@@ -25,3 +24,13 @@ def test_basic():
     assert pig_latinify("apple") == "appleyay"
 
 
+def test_advanced():
+    """
+    This tests odd cases such as capitals, spaces, symbols, numbers and a mix of them.
+    """
+    assert pig_latinify("HELLO WORLD") == "ello worldhay"
+    assert pig_latinify("hell0 W0R|D") == "ell0 w0r|dhay"
+    assert pig_latinify("#hashtag") == "Error. Does not start with vowel or consonant."
+    assert pig_latinify("   HELLO WORLD") == "Error. Does not start with vowel or consonant."
+    assert pig_latinify("0987@#$%*&") == "Error. Does not start with vowel or consonant."
+    assert pig_latinify("#Y O L O S W A G 360n0ScoPe") == "Error. Does not start with vowel or consonant."
