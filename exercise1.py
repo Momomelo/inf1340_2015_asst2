@@ -16,24 +16,21 @@ consonant = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v"
 
 #took out "word" from pig_latinify(word) below
 def pig_latinify():
-	piglatinchecker = str(raw_input("Input a string to make it piglatin!"))
+	piglatinchecker = raw_input("Input a string to make it piglatin!").lower()
 
 	if piglatinchecker[0] in vowel:
 		print piglatinchecker + "yay"
 	elif piglatinchecker[0] in consonant:
-		remove consonant in piglatinchecker
-		
-		print "its a consonant!"
+		while piglatinchecker[0] in consonant:
+			piglatinchecker = piglatinchecker + piglatinchecker[0]
+			piglatinchecker = piglatinchecker[1:]
+		print piglatinchecker + "yay"
 	else:
 		print ("Error")
 
 pig_latinify()
 
-print vowel
-print consonant
 #Remove pig_latinify() after you are done the codeself.
-
-
 
 """
 if piglatin:
