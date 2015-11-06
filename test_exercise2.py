@@ -52,3 +52,12 @@ def test_multi_find_basic():
     Test multi_find function.
     """
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
+
+def test_too_many_variables():
+    """
+    Tests for more variables than are accepted.
+    """
+    try:
+        assert find("asdf", "qwerty", 0, 20, 20) == 10
+    except TypeError:
+        return True

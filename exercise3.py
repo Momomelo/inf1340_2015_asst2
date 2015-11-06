@@ -15,8 +15,8 @@ __license__ = "MIT License"
 
 def is_equal(table1, table2):
     """
-    This is a helper function that tests if table 1 is same format/attributes (column wise)
-    as table 2 in the same order
+    This is a helper function that tests if table 1 is same format/attributes
+    (column wise)as table 2 in the same order
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
@@ -96,8 +96,8 @@ def intersection(table1, table2):
 
 def difference(table1, table2):
     """
-    Perform the difference operation on tables, table 1 and 2, returns the rows that are on table 1
-    but not on table 2
+    Perform the difference operation on tables, table 1 and 2,
+    returns the rows that are on table 1 but not on table 2
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)

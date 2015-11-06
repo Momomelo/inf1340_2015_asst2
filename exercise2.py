@@ -31,7 +31,7 @@ def find(input_string, substring, start, end):
         # check is a string that is from current position to substring position
         check = input_string[i: i+sub_length]
         # check if the substring and string potential are same
-        if (check == substring):
+        if check == substring:
             # if so return position
             return i
     # otherwise return -1
@@ -56,7 +56,7 @@ def multi_find(input_string, substring, start, end):
         # check to find first position of substring in the range
         index_found = find(input_string, substring, start, end)
         # if there is no substring in the range just break out of the loop
-        if (index_found == -1):
+        if index_found == -1:
             break
         # if found add to the result and start looking after the end of the substring
         else:
