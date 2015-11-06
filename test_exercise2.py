@@ -14,13 +14,32 @@ __license__ = "MIT License"
 
 from exercise2 import find, multi_find
 
-
 def test_find_basic():
     """
-    Test find function.
+    Test find function with substring that exist
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
 
+def test_find_none():
+    """
+    Test find function with substring that does not exist
+    """
+    assert find("This is an ex-parrot", "help", 0, 20) == -1
+
+def test_find_all():
+    """
+    Test find function with substring that does not exist
+    """
+    assert find("helphelphelphelp", "help", 0, 16) == 0
+
+def test_find_bad_start_end():
+    """
+    Test find function with substring that does not exist
+    """
+    try:
+        assert find("0", "help", -1, 52)
+    except AssertionError:
+        return True
 
 def test_multi_find_basic():
     """

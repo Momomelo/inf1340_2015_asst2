@@ -20,10 +20,12 @@ def test_basic():
     Basic test cases from assignment hand out
     """
     assert pig_latinify("dog") == "ogday"
+def test_basic_long():
     assert pig_latinify("scratch") == "atchscray"
+def test_basic_short():
     assert pig_latinify("is") == "isyay"
+def test_basic_vowel():
     assert pig_latinify("apple") == "appleyay"
-
 
 def test_advanced():
     """
