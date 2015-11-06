@@ -13,16 +13,17 @@ __license__ = "MIT License"
 
 
 def pig_latinify(word):
-	"""
-    DOCSTRING GOES HERE
-    parameters
-	Returns
-	Raises
+	""" This function will make the inputted argument into piglatin.
+
+	    :param word: a string
+		:return: a new string in piglatin
+		:raise:
+
 	"""
 
 	vowel = ["a","e","i","o","u"]
 	consonant = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
-	word = word.lower()
+	word = str(word.lower())
 
 	if word[0] in vowel:
 		return word + "yay"
