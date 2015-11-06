@@ -35,7 +35,7 @@ def find(input_string, substring, start, end):
         if (check == substring):
             # if so return position
             return i
-    # otherwise return -1 
+    # otherwise return -1
     return -1
 
 
@@ -51,12 +51,18 @@ def multi_find(input_string, substring, start, end):
     :param end: the position we are end looking for the string (Integer)
     :return: all the positions found in this format (pos1, pos2, pos3...)  (String
     """
+    # Initalize a empty result
     result = ""
+    # Cycle through the rang eof the string being checked for substring
     for i in range (start, end):
+        # check to find first position of substring in the range
         index_found = find(input_string, substring, start, end)
+        # if there is no substring in the range just break out of the loop
         if (index_found == -1):
             break
+        # if found add to the result and start looking after the end of the substring
         else:
             result = result + str(index_found) + ","
             start = index_found + len(substring)
+    # return the result without the comma
     return result[0:len(result)-1]
