@@ -28,18 +28,23 @@ def test_find_none():
 
 def test_find_all():
     """
-    Test find function with substring that does not exist
+    Test find function with substring contained multiple times
     """
     assert find("helphelphelphelp", "help", 0, 16) == 0
 
 def test_find_bad_start_end():
     """
-    Test find function with substring that does not exist
+    Test find function with substring that is longer than tested
     """
     try:
-        assert find("0", "help", -1, 52)
+        assert find("h", "help", 0, 1)
     except AssertionError:
         return True
+def test_find_bad_different_characters():
+    """
+    Test find function with strings that contain weird characters 
+    """
+    assert find("@#@#!#@#$%^@&*", "^@&*", 0, 14) == 10
 
 def test_multi_find_basic():
     """
