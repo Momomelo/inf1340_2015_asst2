@@ -41,6 +41,7 @@ def test_integer():
     This test case checks if integers are an acceptable input.
     """
     assert pig_latinify(1337) == "Error. Does not start with vowel or consonant."
+    assert pig_latinify(-1337) == "Error. Does not start with vowel or consonant."
 
 def test_spaces():
     """

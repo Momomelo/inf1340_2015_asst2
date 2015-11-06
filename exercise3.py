@@ -30,6 +30,7 @@ def is_equal(table1, table2):
     else:
         return False
 
+
 def union(table1, table2):
     """
     Perform the union set operation on tables, table1 and table2.
@@ -42,11 +43,11 @@ def union(table1, table2):
     """
     table_union = []
     # checking if schema is true to calculate rest'=
-    if is_equal(table1,table2):
+    if is_equal(table1, table2):
         # concatenate the two tables together
         table_union = table1 + table2
         # removing duplicates of the concentated table
-        table_union= remove_duplicates(table_union)
+        table_union = remove_duplicates(table_union)
     # if schema does not match just throw an exception
     else:
         raise MismatchedAttributesException('Schema of tables do not match')
@@ -81,13 +82,13 @@ def intersection(table1, table2):
                     for k in range(1, len(table1[0])):
 
                         if(table1[i][k] == table2[j][k]):
-                            similar_count=similar_count+1
+                            similar_count = similar_count+1
                         else:
                             break
                     if (similar_count == len(table1[0])):
                         table_intersect.append(table1[i])
                         break
-    #if schema does not match just throw an exception
+    # if schema does not match just throw an exception
     else:
         raise MismatchedAttributesException('Schema of tables do not match')
     return table_intersect
@@ -118,13 +119,13 @@ def difference(table1, table2):
                     # check every item in that row if same as other
                     for k in range(1, len(table1[0])):
                         if(table_intersection[i][k] == table_difference[j][k]):
-                            similar_count=similar_count+1
+                            similar_count = similar_count+1
                         else:
                             break
                     if (similar_count == len(table_difference[0])):
                         del table_difference[j]
                         break
-    #if schema does not match just throw an exception
+    # if schema does not match just throw an exception
     else:
         raise MismatchedAttributesException('Schema of tables do not match')
     return table_difference

@@ -13,8 +13,7 @@ __license__ = "MIT License"
 
 
 def find(input_string, substring, start, end):
-    """
-    This returns the lowest index where the substring is found in the index
+    """ This returns the lowest index where the substring is found in the index
     range from beginning position to end position. If it is not found we
     will return -1.
 
@@ -40,8 +39,7 @@ def find(input_string, substring, start, end):
 
 
 def multi_find(input_string, substring, start, end):
-    """
-    This returns the all the index where the substring is found in the index
+    """ This returns the all the index where the substring is found in the index
     range from beginning position to end position. If it is not found we
     will return no information.
 

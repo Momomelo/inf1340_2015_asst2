@@ -15,8 +15,8 @@ __license__ = "MIT License"
 def pig_latinify(word):
     """ This function will make the inputted argument into piglatin.
 
-        :param word: a string or an int
-        :return: a new string
+        :param word: a string or an int.
+        :return: a new string.
         :raise: TypeError:
             When more than one variabe is inputted.
     """
