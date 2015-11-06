@@ -64,6 +64,7 @@ def intersection(table1, table2):
         if tables t1 and t2 don't have the same attributes
     """
     table_intersect = []
+    # checking if attributes of two tables are same
     if is_equal(table1, table2):
         # clean the tables to ensure all uniqueness
         table1 = remove_duplicates(table1)
@@ -94,11 +95,18 @@ def intersection(table1, table2):
 
 def difference(table1, table2):
     """
-    Describe your function
+    Perform the difference operation on tables, table 1 and 2, returns the rows that are on table 1
+    but not on table 2
 
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
     """
     table_difference = table1[:]
     table_intersection = intersection(table1, table2)
+    # checking if attributes of two tables are same
     if is_equal(table1, table2):
         table1 = remove_duplicates(table1)
         for i in range(0, len(table_intersection)):
@@ -116,6 +124,7 @@ def difference(table1, table2):
                     if (similar_count == len(table_difference[0])):
                         del table_difference[j]
                         break
+    #if schema does not match just throw an exception
     else:
         raise MismatchedAttributesException('Schema of tables do not match')
     return table_difference
@@ -146,15 +155,3 @@ class MismatchedAttributesException(Exception):
     don't have the same attributes.
     """
     pass
-
-grad = [['Number', 'Surname', 'Age'], [7274, 'Robinson', 37], [7432, "O'Malley", 39], [9824, 'Darkes', 38],[1337, 'Batman', 22]]
-gradcheck = [['Number', 'Surname', 'Age'], [8862, 'Robinson', 37], [7522, "O'Malley", 39], [1337, 'Batman', 22], [9824, 'Darkes', 38], [1142, 'Albert', 22]]
-print(is_equal(grad, gradcheck))
-tablefun = union(grad, gradcheck)
-print(tablefun)
-
-tablewhy = remove_duplicates(grad + gradcheck)
-print(tablewhy)
-
-tableintersect = intersection(grad, gradcheck)
-print(tableintersect)
