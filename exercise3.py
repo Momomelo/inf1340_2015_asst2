@@ -7,12 +7,21 @@ implemented as lists of lists.
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = "Kei'ichiro Yamamoto, Albert Tai"
+__email__ = "keiichiro.yamamoto@mail.utoronto.ca , albert.tai@mail.utoronto.ca"
+__copyright__ = "2015 Kei'ichiro Yamamoto, Albert Tai"
 __license__ = "MIT License"
 
+
 def is_equal(table1, table2):
+    """
+    This is a helper function that tests if table 1 is same format/attributes (column wise)
+    as table 2 in the same order
+
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: boolean value whether it is same or not
+    """
     if (len(table1[0]) == len(table2[0])):
         for i in range(0, len(table1[0])):
             if(table1[0][i] != table2[0][i]):
@@ -46,8 +55,13 @@ def union(table1, table2):
 
 def intersection(table1, table2):
     """
-    Describe your function
+    Perform the intersection operation on tables, table 1 and 2
 
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
     """
     table_intersect = []
     if is_equal(table1, table2):

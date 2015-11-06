@@ -6,9 +6,9 @@ This module converts English words to Pig Latin words
 
 """
 
-__author__ = "Kei'ichiro Yamamoto, Tzu Tai"
-__email__ = "keiichiro.yamamoto@mail.utoronto.ca , "
-__copyright__ = "2015 Kei'ichiro Yamamoto"
+__author__ = "Kei'ichiro Yamamoto, Albert Tai"
+__email__ = "keiichiro.yamamoto@mail.utoronto.ca , albert.tai@mail.utoronto.ca"
+__copyright__ = "2015 Kei'ichiro Yamamoto, Albert Tai"
 __license__ = "MIT License"
 
 
