@@ -31,6 +31,7 @@ def test_find_all():
     Test find function with substring contained multiple times
     """
     assert find("helphelphelphelp", "help", 0, 16) == 0
+    assert find("     ", "      ", 0, 10) == -1
 
 def test_find_bad_start_end():
     """
